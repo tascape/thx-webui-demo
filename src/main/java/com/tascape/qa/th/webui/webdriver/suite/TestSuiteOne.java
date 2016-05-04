@@ -19,6 +19,7 @@ import com.tascape.qa.th.webui.webdriver.driver.GoogleDotCom;
 import com.tascape.qa.th.webui.webdriver.test.GoogleSearchTests;
 import com.tascape.qa.th.webui.comm.WebBrowser;
 import com.tascape.qa.th.suite.AbstractSuite;
+import com.tascape.qa.th.webui.webdriver.test.AdsInfoTests;
 
 /**
  *
@@ -37,6 +38,7 @@ public class TestSuiteOne extends AbstractSuite {
 
     @Override
     public void setUpTestClasses() {
+        this.addTestClass(AdsInfoTests.class);
         this.addTestClass(GoogleSearchTests.class);
     }
 
@@ -53,6 +55,7 @@ public class TestSuiteOne extends AbstractSuite {
         google.launch("https://www.google.com");
 
         this.putTestDirver(GoogleSearchTests.GOOGLE_DOT_COM, google);
+        this.putTestDirver(AdsInfoTests.GOOGLE_DOT_COM, google);
     }
 
     @Override

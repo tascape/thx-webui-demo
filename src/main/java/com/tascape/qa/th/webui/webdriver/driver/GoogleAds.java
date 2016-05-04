@@ -16,38 +16,39 @@
 package com.tascape.qa.th.webui.webdriver.driver;
 
 import com.tascape.qa.th.webui.driver.Page;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import static org.junit.Assert.assertTrue;
 
 /**
+ * Sample page. http://www.seleniumeasy.com/selenium-tutorials/xpath-tutorial-for-selenium.
  *
  * @author linsong wang
  */
-public class SearchPage extends Page {
+public class GoogleAds extends Page {
 
-//    @CacheLookup
-    @FindBy(id = "lst-ib")
-    private WebElement searchBox;
+    @FindBy(xpath = "//h1[contains(text(), 'AdWords')]/following::*/a")
+    private WebElement adWords;
 
-    public void submitSearch(String term) {
-        this.searchBox.clear();
-        this.searchBox.sendKeys(term);
-        this.searchBox.submit();
-    }
+    @FindBy(xpath = "//h1[contains(text(), 'AdSense')]/following::*/a")
+    private WebElement adSense;
 
     @Override
     public String getPath() {
-        return "/";
+        return "/intl/en/ads/";
+    }
+
+    public void openAdWords() {
+        adWords.click();
+    }
+
+    public void openAdSense() {
+        adSense.click();
     }
 
     @Override
     protected void isLoaded() throws Error {
-        String url = this.webBrowser.getCurrentUrl();
-        assertTrue("Not on the expected page: " + url, url.contains("google.com"));
-    }
-
-    public void search(String term) throws Exception {
-        this.submitSearch(term);
+        String title = this.webBrowser.getTitle();
+        Assert.assertEquals("Not on the expected page: " + title, "Google Ads", title);
     }
 }

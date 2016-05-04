@@ -15,6 +15,7 @@
  */
 package com.tascape.qa.th.webui.webdriver.driver;
 
+import com.tascape.qa.th.exception.EntityCommunicationException;
 import com.tascape.qa.th.webui.driver.App;
 
 /**
@@ -33,9 +34,12 @@ public class GoogleDotCom extends App {
         return "1.0.0";
     }
 
-    public void search(String term) throws Exception {
-        SearchPage searchPage = this.open(SearchPage.class);
-        searchPage.submitSearch(term);
+    public SearchPage openSearch() throws EntityCommunicationException {
+        return this.open(SearchPage.class);
+    }
+
+    public GoogleAds openAds() throws EntityCommunicationException {
+        return this.open(GoogleAds.class);
     }
 
     @Override
