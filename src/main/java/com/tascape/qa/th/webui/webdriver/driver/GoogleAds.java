@@ -27,10 +27,10 @@ import org.openqa.selenium.support.FindBy;
  */
 public class GoogleAds extends Page {
 
-    @FindBy(xpath = "//h1[contains(text(), 'AdWords')]/following::*/a")
+    @FindBy(xpath = "//h1[contains(text(), 'AdWords')]/following::a")
     private WebElement adWords;
 
-    @FindBy(xpath = "//h1[contains(text(), 'AdSense')]/following::*/a")
+    @FindBy(xpath = "//h1[contains(text(), 'AdSense')]/following::a")
     private WebElement adSense;
 
     @Override
