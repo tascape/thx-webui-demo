@@ -21,7 +21,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 /**
- * Sample page. http://www.seleniumeasy.com/selenium-tutorials/xpath-tutorial-for-selenium.
+ * Sample page.
+ * http://www.seleniumeasy.com/selenium-tutorials/xpath-tutorial-for-selenium.
+ * http://www.seleniumeasy.com/selenium-tutorials/examples-for-xpath-and-css-selectors.
  *
  * @author linsong wang
  */
