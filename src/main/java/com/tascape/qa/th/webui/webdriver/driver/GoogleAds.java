@@ -15,7 +15,7 @@
  */
 package com.tascape.qa.th.webui.webdriver.driver;
 
-import com.tascape.qa.th.webui.driver.Page;
+import com.tascape.qa.th.webui.driver.WebPage;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -27,7 +27,7 @@ import org.openqa.selenium.support.FindBy;
  *
  * @author linsong wang
  */
-public class GoogleAds extends Page {
+public class GoogleAds extends WebPage {
 
     @FindBy(xpath = "//h1[contains(text(), 'AdWords')]/following::a")
     private WebElement adWords;

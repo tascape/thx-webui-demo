@@ -16,13 +16,13 @@
 package com.tascape.qa.th.webui.webdriver.driver;
 
 import com.tascape.qa.th.exception.EntityCommunicationException;
-import com.tascape.qa.th.webui.driver.App;
+import com.tascape.qa.th.webui.driver.WebApp;
 
 /**
  *
  * @author linsong wang
  */
-public class GoogleDotCom extends App {
+public class GoogleDotCom extends WebApp {
 
     @Override
     public String getName() {
@@ -35,7 +35,7 @@ public class GoogleDotCom extends App {
     }
 
     public SearchPage openSearch() throws EntityCommunicationException {
-        return this.open(SearchPage.class);
+        return super.open(SearchPage.class);
     }
 
     public GoogleAds openAds() throws EntityCommunicationException {
